@@ -1,11 +1,19 @@
 import "./App.css";
-import { PropTypes } from "prop-types";
+import SearchBar from "./SearchBar";
 import { useState } from "react";
 
 function App() {
-  return <div className="App">
+  const [data, setData] = useState({});
 
-  </div>;
+  const updateData = (searchParams) => {
+    setData(searchParams);
+  };
+
+  return (
+    <div className="App">
+      <SearchBar callback={updateData} />
+    </div>
+  );
 }
 
 export default App;
